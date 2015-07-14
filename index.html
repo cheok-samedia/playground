@@ -1,0 +1,63 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello React</title>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/react/react.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="griddle.js"></script>
+</head>
+<body>
+
+<script src="build/commentbox.js"></script>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope, $timeout) {
+        $scope.firstName= "John";
+        $scope.lastName= "Doe";
+
+        timer = $timeout(function() { 
+            alert('We get data back from AngularJS. Now, try to render a react js component');
+            $scope.data = {data : [
+                {author: "Pete Hunt", text: "This is one comment"},
+                {author: "Jordan Walke", text: "This is *another* comment"}
+            ]};  
+
+            var fakeNetworkData =  [
+              {
+                "id": 0,
+                "name": "Mayer Leonard",
+                "city": "Kapowsin",
+                "state": "Hawaii",
+                "country": "United Kingdom",
+                "company": "Ovolo",
+                "favoriteNumber": 7
+              }
+            ];
+
+            React.render(
+              React.createElement(Griddle, {results: fakeNetworkData}),
+              document.getElementById('content')
+            );
+
+            $timeout.cancel(timer);
+        }, 5000);
+    });
+
+</script>
+
+
+<div ng-app="myApp" ng-controller="myCtrl">
+    First Name: <input type="text" ng-model="firstName"><br>
+    Last Name: <input type="text" ng-model="lastName"><br>
+    <br>
+    Full Name: {{firstName + " " + lastName}}
+</div>
+
+<div id="content"></div>
+
+</body>
+</html>

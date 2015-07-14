@@ -1,0 +1,19 @@
+{
+  "name": "Font-Awesome",
+  "description": "Font Awesome",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/FortAwesome/Font-Awesome.git"
+  },
+  "main": "css/font-awesome.css",
+  "homepage": "https://github.com/ivanyeoh/Font-Awesome",
+  "_release": "33ceee2da4",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "33ceee2da424781839742600f4902d7f756f5e85"
+  },
+  "_source": "git://github.com/ivanyeoh/Font-Awesome.git",
+  "_target": "master",
+  "_originalSource": "git://github.com/ivanyeoh/Font-Awesome"
+}
